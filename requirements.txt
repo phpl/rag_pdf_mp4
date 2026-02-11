@@ -1,0 +1,6 @@
+ollama
+pymupdf
+openai-whisper
+chromadb
+langchain-experimental
+langchain-huggingface

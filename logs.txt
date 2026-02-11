@@ -1,0 +1,87 @@
+~/rag via 🐍 v3.9.6 on ☁️  (eu-west-1) took 6m50s
+❯ ./run.sh
+
+/Users/phad/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Processing PDF: rag/RAG Intro.pdf
+Processing PDF: rag/Productized & Enterprise RAG.pdf
+Processing PDF: rag/Databases for GenAI.pdf
+Processing PDF: rag/Architecture & Design Patterns.pdf
+Processing video: rag/1 part. RAG Intro.mp4
+/Users/phad/Library/Python/3.9/lib/python/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+Processing video: rag/1st Part_Productized Enterprise RAG.mp4
+/Users/phad/Library/Python/3.9/lib/python/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+Processing video: rag/2 part Databases for GenAI.mp4
+/Users/phad/Library/Python/3.9/lib/python/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+Processing video: rag/2nd Part_Architecture & Design Patterns.mp4
+/Users/phad/Library/Python/3.9/lib/python/site-packages/whisper/transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+Knowledge base loaded. Ask questions (type 'quit' to exit):
+
+Q: What are the production 'Do's' for RAG?
+A: The correct answer is not explicitly stated in the provided text, but based on the context and the discussion about RAG, I can provide a possible answer:
+
+Production "Do's" for RAG (Reactive Architecture for Knowledge) may include:
+
+1. **Implement robust chunking logic**: Use a combination of variable and fixed chunking to handle different types of documents and queries.
+2. **Choose the right vector database**: Select a suitable vector database that can efficiently store and retrieve embeddings, such as Quadrant or Chroma-Phase.
+3. **Use integrations with providers**: Leverage integrations with popular NLP models and providers like OpenAI to improve model performance and efficiency.
+4. **Configure history management wisely**: Implement an efficient history management system to handle context switching and answer augmentation.
+5. **Monitor and optimize performance**: Continuously monitor the system's performance and make adjustments as needed to ensure optimal results.
+
+Please note that this is an inference based on the provided text, and actual production "Do's" may vary depending on specific requirements and use cases.
+
+Q: What is the difference between standard retrieval and the ColPali approach?
+A: This appears to be a set of slides from a presentation about RUG (a system for retrieving information from a knowledge base), specifically focusing on embeddings, vectorization, and related topics. Here's a summary of the content:
+
+**Overview of RUG**
+
+* RUG is a software system that helps crawl knowledge bases
+* It addresses prompts in natural language
+* Unlike traditional APIs, RUG doesn't require formal specifications or specific formats
+
+**Embeddings**
+
+* Embeddings are transformations of text to numeric representations (vectors)
+* These vectors can be used by machine learning algorithms to understand similarities between words or texts
+* Dimensions of the vector space represent different aspects of meaning (e.g., graph with points and dimensions)
+
+**Vectorization**
+
+* Vectorization is the process of transforming text into a numerical representation that can be processed by machine learning algorithms
+
+**RUG Architecture**
+
+* RUG uses a combination of data chunking, advanced retrieval techniques, and embedding-based approaches
+* The system is designed to be scalable and adaptable to different domains and use cases
+
+**Production Readiness**
+
+* Considerations for production-ready RUG systems include:
+        + Balancing retrieval vs. generation cost and latency
+        + Continuous evaluation of relevance and drift
+        + Governance for data freshness and accuracy
+        + Potential upgrade path: Agentic/Tool-use RAG (a variant of the RAG system)
+
+**Common Challenges**
+
+* Chunking and context windows: poorly defined chunks can lead to irrelevant or missing information
+* Model context length: LLMs can only ingest a limited number of tokens before performance degrades
+
+The presentation covers these topics in more detail, including examples, diagrams, and code snippets. The slides also include some warnings about common pitfalls and challenges when building RUG systems.
+
+Q: Why is hybrid search better than vector-only search?
+A: Hybrid search is better than vector-only search for several reasons:
+
+1. **Handling complex queries**: Hybrid search can handle complex queries by retrieving relevant information from external sources and injecting it into the prompt, whereas vector-only search may struggle to understand the context of such queries.
+2. **Preserving visual context**: Hybrid search can preserve visual context when processing documents like PDFs, where traditional RAG pipelines would lose visual information. This is particularly important for tasks like figure captioning or layout detection.
+3. **Improving accuracy**: By retrieving authoritative evidence from external sources, hybrid search can generate more accurate answers and cite sources, which is especially useful in situations where the model's training data is limited or outdated.
+4. **Adapting to novel queries**: Hybrid search can effectively handle novel and niche queries that weren't present in the model's training data, making it a valuable tool for adapting to new topics or domains.
+5. **Increasing efficiency**: By using smaller, targeted chunks of information, hybrid search can streamline retrieval and generation processes, leading to increased efficiency.
+
+Overall, hybrid search provides a more comprehensive solution by combining the strengths of traditional RAG pipelines with the benefits of external source retrieval, making it a powerful tool for a wide range of applications.
+
+Q: q

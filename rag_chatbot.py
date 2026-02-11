@@ -61,7 +61,7 @@ def add_chunks(collection, chunks: list[dict]) -> None:
     )
 
 
-def query_store(collection, query: str, top_k: int = 10) -> list[str]:
+def query_store(collection, query: str, top_k: int = 20) -> list[str]:
     results = collection.query(query_texts=[query], n_results=top_k)
     return results["documents"][0]
 
@@ -69,8 +69,9 @@ def query_store(collection, query: str, top_k: int = 10) -> list[str]:
 def generate_answer(question: str, context_chunks: list[str]) -> str:
     context = "\n\n".join(context_chunks)
     prompt = (
-        "Use the following context to answer the question. "
-        "Base your answer only on the provided context.\n\n"
+        "Answer the question based on the context below. "
+        "If the answer is in the context, state it directly. "
+        "If not, say you don't know.\n\n"
         f"Context:\n{context}\n\n"
         f"Question: {question}\n\n"
         "Answer:"
